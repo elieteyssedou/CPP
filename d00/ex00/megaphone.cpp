@@ -1,4 +1,16 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eteyssed <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/06/15 20:17:15 by eteyssed          #+#    #+#             */
+/*   Updated: 2015/06/15 20:17:16 by eteyssed         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <iostream>
 
 void	my_mega_print(char *str)
 {
@@ -9,9 +21,9 @@ void	my_mega_print(char *str)
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')
 			str[i] -= 32;
-		write(1, &str[i], 1);
 		i++;
 	}
+	std::cout << str;
 }
 
 int main(int ac, char **av)
@@ -20,13 +32,13 @@ int main(int ac, char **av)
 
 	i = 1;
 	if(ac == 1)
-		write(1, "* LOUD AND UNBEARABLE FEEDBACK NOISE *", 38);
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	else
 		while (av[i])
 		{
 			my_mega_print(av[i]);
 			i++;
 		}
-	write(1, "\n", 1);
+	std::cout << std::endl;
 	return 0;
 }
