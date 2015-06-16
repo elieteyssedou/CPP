@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	prog
-SRC		=	main.cpp
-OBJ		=	$(SRC:.c=.o)
+NAME	=	phonebook
+SRC		=	main.cpp Contact.class.cpp
+OBJ		=	$(SRC:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror
 CC		=	clang++
 
