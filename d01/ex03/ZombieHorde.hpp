@@ -1,40 +1,21 @@
-#include "ZombieHorde.hpp"
-#include "Zombie.hpp"
+#ifndef ZOMBIEHORDE_HPP
+# define ZOMBIEHORDE_HPP
+
 #include <iostream>
+#include "Zombie.hpp"
 
-ZombieHorde::ZombieHorde(int N)
+class ZombieHorde
 {
-	std::cout << "A ZombieHorde was created." << std::endl;
-	setZombieType();
-	return;
-}
+public:
+	ZombieHorde(int N);
+	~ZombieHorde();
+	void			setZombieType();
+	Zombie*			newZombie(std::string name);
+	Zombie*			randomChump();
+	int				n;
+private:
+	std::string		_type;
+	Zombie			*_horde;
+};
 
-ZombieHorde::~ZombieHorde()
-{
-	std::cout << "A ZombieHorde died." << std::endl;
-	return;
-}
-
-void	ZombieHorde::setZombieType()
-{
-	std::cout << "Please define a type of Zombie : ";
-	std::cin >> this->_type;
-	return;
-}
-
-Zombie* ZombieHorde::newZombie(std::string name)
-{
-	Zombie *zomb;
-
-	zomb = new Zombie(name, this->_type);
-	return (zomb);
-}
-
-Zombie* ZombieHorde::randomChump()
-{
-	std::string NameArray[10] = { "Bryan", "John", "Michael", "Anton", "Antoine", "Lou", "Alain", "Felix", "Elie", "Mike"};
-
-	Zombie zomb(NameArray[rand() % 10], this->_type);
-	zomb.announce();
-	return (&zomb);
-}
+#endif

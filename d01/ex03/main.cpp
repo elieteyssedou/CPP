@@ -6,17 +6,7 @@
 int main()
 {
 	std::string 	name("Barbapapa");
-	ZombieHorde*	event = new ZombieHorde;
-	Zombie*			zombie;
-
-	zombie = event->newZombie(name);
-
-	for (int i = 0; i < 10; ++i)
-	{
-		event->randomChump();
-		usleep(300000);
-	}
-
-	delete zombie;
+	ZombieHorde*	event = new ZombieHorde(10);
+	delete	event;
 	return 0;
 }
