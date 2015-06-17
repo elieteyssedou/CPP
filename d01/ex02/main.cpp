@@ -11,7 +11,7 @@ int main()
 
 	zombie = event->newZombie(name);
 
-	for (int i = 0; i < 30; ++i)
+	for (int i = 0; i < 10; ++i)
 	{
 		event->randomChump();
 		usleep(300000);
